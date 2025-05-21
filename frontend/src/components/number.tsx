@@ -17,7 +17,7 @@ export default function Number() {
             <Skeleton visible={data == null}>
                 <Text
                     ta={"center"}
-                    size={"10rem"}
+                    size={"9rem"}
                     variant={"gradient"}
                     gradient={{from: 'blue', to: 'cyan', deg: 45}}
                 >
