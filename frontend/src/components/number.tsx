@@ -5,7 +5,7 @@ export default function Number() {
     const [data, setData] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch("http://localhost:8000/count")
+        fetch("/api/count")
             .then((response) => response.json())
             .then((data) => {console.log(data); setData(data.count);})
     }, [])

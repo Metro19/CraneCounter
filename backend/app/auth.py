@@ -10,8 +10,8 @@ from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from database.db_main import User, Token
-from database.setup import db_engine
+from app.database.db_main import User, Token
+from app.database.setup import db_engine
 
 ph = argon2.PasswordHasher()
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")

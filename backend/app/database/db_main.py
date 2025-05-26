@@ -15,6 +15,7 @@ class Addition(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     count: Mapped[int] = mapped_column()
     date: Mapped[Optional[datetime]] = mapped_column()
+    give_away: Mapped[bool] = mapped_column()
 
     def __repr__(self) -> str:
         return f"#{self.id} Count: {self.count} on {'None' if not self.date else self.date.isoformat()}"
