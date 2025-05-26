@@ -5,7 +5,7 @@ export default function GivenAway() {
     const [data, setData] = useState<string | null>(null);
 
     useEffect(() => {
-        fetch("http://localhost:8000/disposed_of")
+        fetch("api/disposed_of")
             .then((response) => response.json())
             .then((data) => {console.log(data); setData(data.count);})
     }, [])

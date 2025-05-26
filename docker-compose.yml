@@ -1,0 +1,24 @@
+services:
+  frontend:
+    image: frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+  backend:
+    image: backend
+    depends_on:
+      mdb:
+        condition: service_healthy
+  mdb:
+    image: mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: mypass
+    healthcheck:
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized" ]
+      start_period: 10s
+      interval: 10s
+      timeout: 5s
+      retries: 3
